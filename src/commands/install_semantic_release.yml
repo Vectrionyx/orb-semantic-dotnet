@@ -1,0 +1,7 @@
+description: >
+  This command installs semantic-release using the CLI and the official .NET SDK Docker image.
+
+steps:
+  - run:
+      name: Install semantic-release
+      command: <<include(scripts/install-semantic-release.sh)>>

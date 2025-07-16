@@ -1,0 +1,15 @@
+description: >
+  This command installs Node.js using the CLI and the official .NET SDK Docker image.
+
+parameters:
+  version:
+    default: '20.x'
+    description: >
+      The version of Node.js to install.
+    type: string
+steps:
+  - run:
+      environment:
+        NODE_VERSION: <<parameters.version>>
+      name: Install Node.js
+      command: <<include(scripts/install-node.sh)>>

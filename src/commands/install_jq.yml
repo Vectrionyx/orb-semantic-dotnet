@@ -1,0 +1,7 @@
+description: >
+  This command installs jq, a lightweight and flexible command-line JSON processor,
+
+steps:
+  - run:
+      name: Install jq
+      command: <<include(scripts/install-jq.sh)>>
