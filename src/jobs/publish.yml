@@ -21,15 +21,9 @@ parameters:
 steps:
   - attach_workspace:
       at: <<parameters.artifacts_dir>>
-  - run:
-      name: Install jq
-      command: apt-get update && apt-get install -y jq
+  - install_jq
   - check_release_indicator:
       artifacts_dir: <<parameters.artifacts_dir>>
-  - run:
-    name: Publish NuGet Packages
-    command: |
-      dotnet nuget push <<parameters.artifacts_dir>>/*.nupkg \
-        --source "https://api.nuget.org/v3/index.json" \
-        --api-key $<<parameters.api_key>> \
-        --skip-duplicate
+  - publish_nuget:
+      artifacts_dir: <<parameters.artifacts_dir>>
+      api_key: <<parameters.api_key>>
