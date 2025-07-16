@@ -30,7 +30,7 @@ steps:
   - checkout:
       path: .
       fetch-depth: 0
-  - install-node:
+  - install_node:
       version: <<parameters.node_version>>
   - run:
       name: Restore NuGet Packages
@@ -38,11 +38,11 @@ steps:
   - run:
       name: Ensure artifacts directory exists
       command: mkdir -p <<parameters.artifacts_dir>>
-  - install-semantic-release
+  - install_semantic_release
   - run:
       name: Process release
       command: npx semantic-release
-  - add-release-indicator:
+  - add_release_indicator:
       artifacts_dir: <<parameters.artifacts_dir>>
   - persist_to_workspace:
       root: <<parameters.artifacts_dir>>
