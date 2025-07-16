@@ -1,0 +1,51 @@
+description: >
+  This job is responsible for versioning, building and packaging the .NET projects in the repository.
+  It will create a NuGet package for each packable project in the specified solution.
+
+executor: 
+  default:
+    tag: <<parameters.dotnet_version>>
+
+parameters:
+  solution:
+    type: string
+    description: >
+      The solution file to build and pack.
+  node_version:
+    type: string
+    default: '20.x'
+    description: >
+      The version of Node.js to install for the build process.
+  dotnet_version:
+    type: string
+    default: '8.0'
+    description: >
+      The version of the .NET SDK to use for building the solution.
+  artifacts_dir:
+    type: string
+    default: "./artifacts"
+    description: >
+      The directory where NuGet packages will be built to.
+steps:
+  - checkout:
+      path: .
+      fetch-depth: 0
+  - install-node:
+      version: <<parameters.node_version>>
+  - run:
+      name: Restore NuGet Packages
+      command: dotnet restore <<parameters.solution>>
+  - run:
+      name: Ensure artifacts directory exists
+      command: mkdir -p <<parameters.artifacts_dir>>
+  - install-semantic-release
+  - run:
+      name: Process release
+      command: npx semantic-release
+  - add-release-indicator:
+      artifacts_dir: <<parameters.artifacts_dir>>
+  - persist_to_workspace:
+      root: <<parameters.artifacts_dir>>
+      paths:
+        - '**/*.nupkg'
+        - "release.json"

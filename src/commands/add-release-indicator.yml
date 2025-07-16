@@ -1,0 +1,16 @@
+description: >
+  This command adds a release indicator to the NuGet packages in the specified directory.
+  The release indicator is used to determine if a release should be triggered and a push should be attempted.
+
+parameters:
+  artifacts_dir:
+    type: string
+    default: "./artifacts"
+    description: >
+      The directory where NuGet packages will be built to.
+steps:
+  - run:
+      environment:
+        ARTIFACTS_DIR: <<parameters.artifacts_dir>>
+      name: Add Release Indicator
+      command: <<include(scripts/add-release-indicator.sh)>>

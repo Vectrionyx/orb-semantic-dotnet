@@ -1,13 +1,17 @@
 description: >
-  Sample example description.
+  Example usage of the CircleCI orb for semantic versioning and deployment of semantic-dotnet projects.
 # Provide a use-case based example for using this orb.
 # Everything in the `usage` section will be displayed in the orb registry.
 # Comments are not retained.
 usage:
   version: 2.1
   orbs:
-    <orb-name>: <namespace>/<orb-name>@1.2.3
+    semantic-dotnet: circleci/semantic-dotnet@1.2.3
   workflows:
     use-my-orb:
       jobs:
-        - <orb-name>/<job-name>
+        - semantic-dotnet/pack:
+            solution: "src/MyProject.sln"
+            node_version: "20.x"
+            dotnet_version: "8.0"
+            artifacts_dir: "./artifacts"

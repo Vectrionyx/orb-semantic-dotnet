@@ -1,0 +1,37 @@
+description: >
+  This job is responsible for ensuring that updated NuGet packages are published to the appropriate feed.
+  It checks for a release indicator and, if present, publishes the packages.
+
+executor:
+  default:
+    tag: <<parameters.dotnet_version>>
+
+parameters:
+  dotnet_version:
+    type: string
+    default: '8.0'
+    description: >
+      The version of the .NET SDK to use for building the solution.
+  artifacts_dir:
+    type: string
+    default: "./artifacts"
+    description: >
+      The directory where NuGet packages will be built to.
+  api_key:
+    type: env_var_name
+    default: NugetAuthentication
+steps:
+  - attach_workspace:
+      at: <<parameters.artifacts_dir>>
+  - run:
+      name: Install jq
+      command: apt-get update && apt-get install -y jq
+  - check-release-indicator:
+      artifacts_dir: <<parameters.artifacts_dir>>
+  - run:
+    name: Publish NuGet Packages
+    command: |
+      dotnet nuget push <<parameters.artifacts_dir>>/*.nupkg \
+        --source "https://api.nuget.org/v3/index.json" \
+        --api-key $<<parameters.api_key>> \
+        --skip-duplicate
