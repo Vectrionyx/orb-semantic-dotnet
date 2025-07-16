@@ -2,9 +2,7 @@ description: >
   This job is responsible for ensuring that updated NuGet packages are published to the appropriate feed.
   It checks for a release indicator and, if present, publishes the packages.
 
-executor:
-  default:
-    tag: <<parameters.dotnet_version>>
+executor: default
 
 parameters:
   dotnet_version:
