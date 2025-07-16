@@ -2,7 +2,7 @@ description: >
   This job is responsible for versioning, building and packaging the .NET projects in the repository.
   It will create a NuGet package for each packable project in the specified solution.
 
-executor: 
+executor:
   default:
     tag: <<parameters.dotnet_version>>
 
