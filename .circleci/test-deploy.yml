@@ -26,7 +26,7 @@ jobs:
   # You may want to add additional validation steps to ensure the commands are working as expected.
   command-test:
     docker:
-      - image: cimg/base:current
+      - image: cimg/node:20.6.1
     steps:
       - checkout
       - run: |
