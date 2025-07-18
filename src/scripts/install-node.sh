@@ -1,3 +1,4 @@
+# shellcheck shell=bash
 TAG=$(circleci env subst "${NODE_VERSION}")
 
 apt-get update 

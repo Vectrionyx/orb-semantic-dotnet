@@ -1,3 +1,4 @@
+# shellcheck shell=bash
 FILE_PATH="$(circleci env subst "${ARTIFACTS_DIR}")"
 
 if [ "$(find "./$FILE_PATH" -type f -name '*.nupkg' | wc -l)" -eq 0 ]; then
