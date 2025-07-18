@@ -11,6 +11,8 @@ orbs:
 filters: &filters
   tags:
     only: /.*/
+  branches:
+    only: main
 
 # Filter for release tags.
 release-filters: &release-filters
@@ -27,6 +29,8 @@ jobs:
       - image: cimg/base:current
     steps:
       - checkout
+      - run: npm install
+      - run: npx semantic-release
       # Run your orb's commands to validate them.
 workflows:
   test-deploy:
