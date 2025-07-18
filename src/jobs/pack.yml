@@ -45,5 +45,5 @@ steps:
   - persist_to_workspace:
       root: <<parameters.artifacts_dir>>
       paths:
-        - '**/*.nupkg'
+        - '*.nupkg'
         - "release.json"
