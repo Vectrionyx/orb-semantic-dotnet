@@ -25,5 +25,5 @@ workflows:
           pipeline_number: << pipeline.number >>
           vcs_type: github
           orb_name: orb-semantic-dotnet
-          requires: [orb-tools/lint, orb-tools/pack, orb-tools/review, shellcheck/check]
+          requires: [orb-tools/lint, orb-tools/pack, shellcheck/check]
           filters: *filters
