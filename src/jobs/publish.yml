@@ -24,6 +24,8 @@ steps:
   - install_jq
   - check_release_indicator:
       artifacts_dir: <<parameters.artifacts_dir>>
+  - check_directory:
+      artifacts_dir: <<parameters.artifacts_dir>>
   - push_nuget:
       artifacts_dir: <<parameters.artifacts_dir>>
       api_key: <<parameters.api_key>>
