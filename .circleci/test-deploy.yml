@@ -26,19 +26,9 @@ jobs:
   # You may want to add additional validation steps to ensure the commands are working as expected.
   command-test:
     docker:
-      - image: cimg/base:current
+      - image: cimg/node:20.6.1
     steps:
       - checkout
-      - run: |
-          apt-get update 
-          apt-get install -y ca-certificates curl gnupg
-
-          mkdir -p /etc/apt/keyrings
-          curl -fsSL https://deb.nodesource.com/gpgkey/nodesource-repo.gpg.key | gpg --dearmor -o /etc/apt/keyrings/nodesource.gpg
-          echo "deb [signed-by=/etc/apt/keyrings/nodesource.gpg] https://deb.nodesource.com/node_20.x nodistro main" > /etc/apt/sources.list.d/nodesource.list
-
-          apt-get update
-          apt-get install -y nodejs
       - run: npm install
       - run: npx semantic-release
       # Run your orb's commands to validate them.
