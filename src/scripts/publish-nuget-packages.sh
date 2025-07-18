@@ -1,5 +1,3 @@
-#!/bin/bash
-
 ARTIFACTS_DIR=$(circleci env subst "${ARTIFACTS_DIR}")
 NUGET_API_KEY=$(circleci env subst "${NUGET_API_KEY}")
 
