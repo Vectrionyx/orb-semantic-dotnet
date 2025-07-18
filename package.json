@@ -1,0 +1,25 @@
+{
+  "name": "orb-semantic-dotnet",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Vectrionyx/orb-semantic-dotnet.git"
+  },
+  "devDependencies": {
+    "semantic-release": "^24.2.7",
+    "@semantic-release/commit-analyzer": "^13.0.1",
+    "@semantic-release/release-notes-generator": "^14.0.3",
+    "@semantic-release/changelog": "^6.0.3",
+    "@semantic-release/github": "^11.0.3",
+    "@semantic-release/git": "^10.0.1"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Vectrionyx/orb-semantic-dotnet/issues"
+  },
+  "homepage": "https://github.com/Vectrionyx/orb-semantic-dotnet#readme"
+}
