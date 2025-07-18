@@ -1,7 +1,9 @@
 usage:
   version: 2.1
   orbs:
-    semantic-dotnet: vectra/orb-semantic-dotnet@1
+    semantic-dotnet:
+      name: vectra/orb-semantic-dotnet@1
+      version: 1
   workflows:
     use-my-orb:
       jobs:
