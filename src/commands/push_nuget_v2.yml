@@ -1,6 +1,6 @@
 description: >
   This command pushes all NuGet packages within a specified directory to nuget.org using nuget.exe
-  
+
 parameters:
   artifacts_dir:
     type: string

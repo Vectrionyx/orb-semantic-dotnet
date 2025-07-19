@@ -1,6 +1,6 @@
 description: >
   This command installs nuget.exe and marks it as executable
-  
+
 steps:
   - run:
       name: Install NuGet
