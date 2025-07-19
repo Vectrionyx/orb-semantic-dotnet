@@ -24,6 +24,7 @@ steps:
   - install_jq
   - check_release_indicator:
       artifacts_dir: <<parameters.artifacts_dir>>
+  - install_mono
   - install_nuget
   - push_nuget_v2:
       artifacts_dir: <<parameters.artifacts_dir>>
