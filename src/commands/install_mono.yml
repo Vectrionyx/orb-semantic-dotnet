@@ -1,0 +1,7 @@
+description: >
+  This command installs mono onto the agent
+
+steps:
+  - run:
+      name: Install Mono
+      command: <<include(scripts/install-mono.sh)>>
