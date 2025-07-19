@@ -1,0 +1,7 @@
+description: >
+  This command installs nuget.exe and marks it as executable
+  
+steps:
+  - run:
+      name: Install NuGet
+      command: <<include(scripts/install-nuget.sh)>>
