@@ -1,0 +1,21 @@
+description: >
+  This command pushes all NuGet packages within a specified directory to nuget.org using nuget.exe
+
+parameters:
+  artifacts_dir:
+    type: string
+    default: "./artifacts"
+    description: >
+      The directory where NuGet packages will be built to.
+  api_key:
+    type: env_var_name
+    default: NugetAuthentication
+    description: >
+      The environment variable name containing the API key for NuGet package publishing.
+steps:
+  - run:
+      environment:
+        ARTIFACTS_DIR: <<parameters.artifacts_dir>>
+        NUGET_API_KEY: <<parameters.api_key>>
+      name: Publish NuGet Packages
+      command: <<include(scripts/publish-nuget-packages-v2.sh)>>
