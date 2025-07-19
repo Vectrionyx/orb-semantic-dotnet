@@ -1,3 +1,10 @@
+## [1.0.6](https://github.com/Vectrionyx/orb-semantic-dotnet/compare/v1.0.5...v1.0.6) (2025-07-19)
+
+
+### Bug Fixes
+
+* add install and publish NuGet commands to CI pipeline ([1fda4cf](https://github.com/Vectrionyx/orb-semantic-dotnet/commit/1fda4cf83f39b13bb03d970c1974d10b0db349ba))
+
 ## [1.0.5](https://github.com/Vectrionyx/orb-semantic-dotnet/compare/v1.0.4...v1.0.5) (2025-07-18)
 
 
