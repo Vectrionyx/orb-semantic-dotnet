@@ -1,3 +1,11 @@
+## [1.0.7](https://github.com/Vectrionyx/orb-semantic-dotnet/compare/v1.0.6...v1.0.7) (2025-07-19)
+
+
+### Bug Fixes
+
+* add Mono installation script and command definition ([621bede](https://github.com/Vectrionyx/orb-semantic-dotnet/commit/621bede93c42754da5e7c3040418deec8b8f2bc5))
+* add Mono installation step to publish workflow ([0a7502c](https://github.com/Vectrionyx/orb-semantic-dotnet/commit/0a7502ccc650f61ead42334a417917eb466df092))
+
 ## [1.0.6](https://github.com/Vectrionyx/orb-semantic-dotnet/compare/v1.0.5...v1.0.6) (2025-07-19)
 
 
